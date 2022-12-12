@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ article.title }}
+{% endblock %}
+
+{% block body%}
+
+	<div class="row bloc-show-article">
+
+		<div class="col-md-8 show-article-item">
+			{% for message in app.flashes("message") %}
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					{{message}}
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			{% endfor %}
+			<h3 class="show-article text-center mb-3">{{ article.title }}</h3>
+            <hr>
+			<div class="bloc-content-article">
+				<p class="text-para-show-article">
+					<img src="/images/{{ article.illustration }}" alt="{{ article.title }}" class="img-show-article mt-3">
+				</p>
+				<p class="content-article-show">
+					{{ article.preview }}
+					{{ article.content }}
+				</p>
+			</div>
+		</div>
+		<div class="col-md-8">
+		<hr>
+            {% for comment in article.comments %}
+                {% if comment.parent == null %}
+                    <h4>Commentaire de {{comment.nickname}}</h4>
+                    <p>Publié le {{comment.createdAt|date("d/m/Y H:i") }}</p>
+                    <div class="mb-3 form-control">{{comment.content|raw}}</div>
+                    <p><a class="btn btn-light" href="#ajout-commentaire" data-reply data-id="{{comment.id}}">Répondre au commentaire</a></p>
+
+                    {% for reply in comment.replies %}
+                         <p>Réponse publié par {{reply.nickname}} le {{reply.createdAt|date("d/m/Y H:i") }}</p>
+                        <div>{{reply.content|raw}}</div>
+
+                    {% endfor %}
+                {% endif %}
+
+            {% endfor %}
+		</div>
+		<div class="col-md-8" id="ajout-commentaire">
+            <hr>
+			<h2>Ajouter un commentaire</h2>
+			{{ form(commentForm) }}
+			</div>
+		</div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        window.onload = () => {
+        //Ecouteur d'événements sur tous les boutons répondre
+            document.querySelectorAll("[data-reply]").forEach(element => {
+                element.addEventListener("click", function(){
+                    console.log(this);
+                });
+            });
+
+        }
+    </script>
+
+{% endblock %}

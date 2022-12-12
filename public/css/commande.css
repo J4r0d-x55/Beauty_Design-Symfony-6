@@ -1,0 +1,20 @@
+/* Commande */
+
+.command-title{
+    text-align: center;
+    font-size: 65px;
+    font-family:'Dancing Script', cursive;
+    margin-top: 95px;
+}
+.flex-commande{
+    display: flex;
+    justify-content: space-around;
+}
+.flex-item-commande{
+    margin: 100px;
+    padding: 20px 65px;
+    background-color: #fef1f1;
+    margin-top: 50px;
+}
+
+

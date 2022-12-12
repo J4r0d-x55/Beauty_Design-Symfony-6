@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rendez-vous{% endblock %}
+
+{% block body %}
+    <h1 style="margin-top:120px;" class="text-center titre-rdv-new">Rendez-vous</h1>
+
+    <table style="margin-top:40px;" id="calendrier" class="table container-sm">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ calendar.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ calendar.title }}</td>
+            </tr>
+            <tr>
+                <th>Début</th>
+                <td>{{ calendar.start ? calendar.start|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Fin</th>
+                <td>{{ calendar.end ? calendar.end|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ calendar.description }}</td>
+            </tr>
+            <tr>
+                <th>Couleur fond</th>
+                <td>{{ calendar.backgroundColor }}</td>
+            </tr>
+            <tr>
+                <th>Couleur bordure</th>
+                <td>{{ calendar.borderColor }}</td>
+            </tr>
+            <tr>
+                <th>Couleur texte</th>
+                <td>{{ calendar.textColor }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="margin: 20px auto;" class="d-grid gap-2 d-md-flex justify-content-center">
+
+        <a href="{{ path('app_calendar_index') }}"><button class="btn btn-light">Retourner à la liste</button></a>
+
+        <a href="{{ path('app_calendar_edit', {'id': calendar.id}) }}"><button class="btn btn-dark">Modifier</button></a>
+
+        {{ include('calendar/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

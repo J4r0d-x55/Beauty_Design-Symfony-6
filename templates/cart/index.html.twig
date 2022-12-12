@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Panier{% endblock %}
+
+{% block body %}
+<section class="flex-panier">
+    <table class="table table-hover">
+        <thead>
+            <tr class="titre-gamme-panier">
+                <th class="gamme-panier">Produit</th>
+                <th class="gamme-panier">Nom</th>
+                <th class="gamme-panier">Prix</th>
+                <th class="gamme-panier">Quantité</th>
+                <th class="gamme-panier">Total</th>
+                <th class="gamme-panier">Actions</th> 
+            </tr>
+        </thead>
+        <tbody class="table-body">
+            {% for element in dataPanier %}
+                <tr>
+                    <th>
+                        <img class="img-panier" src="images/{{ element.produit.illustration }}" alt="{{ element.produit.name }}"></br>
+                    </th>
+                    <td class="nom-produit-panier">{{ element.produit.name }}
+                        </br>
+                        <small class="subtitle_produit-panier">{{ element.produit.subtitle }}</small>
+                    </td>
+                    <td class="prix-produit-panier">{{ (element.produit.price / 100) |number_format(2, ',', '.') }} €</td>
+                    <td class="quantité-produit-panier">{{ element.quantite }}</td>
+                    <td class="total-produit-panier">{{ (element.quantite * element.produit.price / 100) |number_format(2, ',', '.') }} €</td>
+                    <td>
+                        <button class="ajout-panier"><a href="{{path("cart_add", {id: element.produit.id})}}"><img src="/images/ajouter.png"></a></button>
+                        
+                        <button class="retirer-panier"><a href="{{path("cart_remove", {id: element.produit.id})}}"><img src="/images/remove.png"></a></button>
+                            
+                        <button class="supprimer-panier"><a href="{{path("cart_delete", {id: element.produit.id})}}"><img src="/images/delete.png"></a></button>
+                    </td>
+                </tr>
+                        
+            {% else %}
+                <tr>
+                    <td colspan="6" class="text-center">Votre panier est vide</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4" class="final-somme-panier">TOTAL</td>
+                <td>{{ (total / 100) |number_format(2, ',', '.')}} €</td>
+                <td>
+                    <button class="tout-supprimer-panier"><a href="{{path("cart_delete_all")}}"><img src="images/trash.png"></a></button></br><hr>
+                    <a href="{{path("app_order")}}" class="btn btn-light">Valider mon panier</a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</section>
+    
+    
+{% endblock %}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Demande de rendez-vous</h1>
+   
+        <h4>Email : {{ contact.email }}</h4>
+        <h4>Prénom : {{ contact.firstName }}</h4>
+        <h4>Nom : {{ contact.lastName }}</h4>
+        <h4>Date du rendez-vous : {{ contact.date|date("m/d/Y") }}</h4>
+        <h4>Heure du rendez-vous : {{ contact.time|date("H:i:s") }}
+        <h4>Prestation souhaitée : {{ contact.prestation }}</h4>
+        <h4>Demande particulière : {{ contact.demande }}</h4> 
+
+    </body>
+  
+        
+</html>

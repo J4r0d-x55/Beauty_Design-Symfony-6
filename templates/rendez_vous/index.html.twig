@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rendez-vous{% endblock %}
+
+{% block body %}
+<div class=" d-flex justify-content-center">
+    <div class="contact-form-wrapper shadow card">
+      <section action="#" class="contact-form">
+        <h5 class="title-rendez-vous text-center">Prise de rendez-vous</h5>
+        <hr>
+        <p class="description-rendez-vous text-center">Nous vous confirmerons votre rendez-vous dans les 24 heures par email selon la disponibilité <br> ou au besoin nous conviendrons avec vous d'un autre créneau. 
+        </p>
+        {% for message in app.flashes('success') %}
+			    <div class="text-center" style="color:white;font-size:20px;background-color:green;border-radius:15px;">
+				    {{ message }}
+          </div>
+		    {% endfor %}
+        {% for message in app.flashes('danger') %}
+          <div class="text-center" style="color:white;font-size:20px;background-color:red;border-radius:15px;">
+            {{ message }}
+          </div>
+        {% endfor %}
+  
+        {{ form_start(form) }}
+        {{ form_row(form.firstName,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(form.lastName,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(form.email,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(form.prestation,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(form.date,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(form.time,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(form.demande,{'attr':{'class':'form-control'}}) }}
+        {{ form_end(form) }}
+      </section>
+    </div>
+</div>
+{% endblock %}

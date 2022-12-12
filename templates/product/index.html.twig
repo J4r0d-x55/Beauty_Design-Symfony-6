@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Produits{% endblock %}
+
+{% block body %}
+<div class="flex-filter">
+    {{ form(form) }}
+    <h1 class="title-product">Nos Produits</h1>
+</div>
+    <div class="grille-produit">
+    {% for product in products %}
+        <div class="grid-item text-center">
+            <a id="sub-price" class="text-decoration-none" href="{{ path('product', { 'slug' : product.slug }) }}">
+            <img src="images/{{ product.illustration }}" alt="{{ product.name }}">
+            <hr>
+            <span class="product-subtitle">{{ product.subtitle }}</span>
+            <br>
+            <hr>
+            <span class="price-product" style="font-weight:bold;">{{ (product.price / 100) |number_format(2, ',', '.') }} €</span>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

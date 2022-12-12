@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Message envoyé{% endblock %}
+
+{% block body %}
+
+	<section class="container messagerie-bloc">
+		<div class="row">
+			<div class="col">
+				<h1 class="title-message text-center mb-5">Envoyer un message</h1>
+                    {% for message in app.flashes("message") %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{message}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {{ form(form) }}
+				<a class="btn btn-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+					Voir mes dossiers
+				</a>
+                <a class="btn btn-light" href="{{ path("app_messages") }}">Revenir à la messagerie</a>
+ 				<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+					<div class="offcanvas-header">
+						<h2 class="offcanvas-title" id="offcanvasExampleLabel">Mes dossiers</h2>
+						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					</div>
+					<div class="offcanvas-body">
+						<div class="list-group">
+                            <a class="list-group-item 
+                            list-group-item-action" href="{{ path("app_messages") }}">Accueil</a>
+                        </div>
+						<div class="list-group">
+                            <a class="list-group-item 
+                            list-group-item-action" href="{{ path("app_received") }}">Boîte de réception</a>
+                        </div>
+						<div class="list-group">
+                            <a class="list-group-item 
+                            list-group-item-action" href="{{ path("app_sent") }}">Messages envoyés</a>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

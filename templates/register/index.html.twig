@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+
+<section class="inscription-form">
+    <div class="wrapper-inscription">
+                <div class="inner">
+                    <div class="image-holder">
+                        <img class="img-register" src="images/registration-form-4.jpg" alt="femme et produit">
+                    </div>
+                    <article class="form-register">
+                        <h3 class="title-inscription">Inscription</h3>
+                            {{ form(form) }}
+                            <a class="compte-connect" href="{{ path('app_login') }}">Vous avez déjà un compte?</a><br/>
+                            <br>
+                    </article>
+                </div>
+            </div>
+</section>
+
+
+{% endblock %}

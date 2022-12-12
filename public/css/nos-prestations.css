@@ -1,0 +1,70 @@
+/* Nos prestations */
+
+.titre-nos-prestations{
+    text-align: center;
+    margin-top: 110px;
+    font-family:'Dancing Script', cursive;
+    font-size: 65px;
+}
+
+.flex-nos-prestations{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.bloc-nos-prestations{
+    border: solid 1px rgb(194, 194, 194);
+    margin: 70px 35px 35px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    height: 480px;
+
+}
+
+.img-prestations{
+    width: 45%;
+    height: auto;
+}
+.text-nos-prestations{
+    text-align: center;
+    margin-top: 100px;
+}
+.titre-bloc-nos-prestations{
+    font-size: 2vw;
+    margin-top: -30px;
+}
+.paragraphe-nos-prestations{
+    font-size: 1vw;
+    margin-top: 65px;
+}
+.prix-nos-prestations{
+    font-size: 1.2vw;
+    font-weight: bold;
+    margin-top: 45px;
+}
+
+@media (max-width:900px){
+    .bloc-nos-prestations{
+        height: 220px;
+    }
+    .text-nos-prestations{
+        margin-top: 15px;
+        overflow: hidden;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .titre-bloc-nos-prestations{
+        margin-top: 3px;
+    }
+    .paragraphe-nos-prestations{
+        font-size: 2vw;
+        margin-top: 8px;
+        
+    }
+    .prix-nos-prestations{
+        font-size: 3vw;
+        margin-top: -7px;
+    }
+}

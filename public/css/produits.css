@@ -1,0 +1,71 @@
+/* Produits Card */
+
+
+.grille-produit {
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 350px));
+    column-gap: 10px;
+    row-gap: 10px; 
+}
+.grid-item{
+    margin-bottom: 130px;   
+}
+
+.grid-item:hover{
+    scale: 1.1;
+    transition: 0.5s;
+    filter: contrast(0.9);
+}
+.grid-item img{
+    width: 350px;
+    height: auto;
+}
+.title-product{
+    text-align: center;
+    font-size: 65px;
+    font-family:'Dancing Script', cursive;margin-right: 33vw ;
+}
+#sub-price{
+    color: #333;
+}
+
+.flex-filter{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+@media(max-width:750px){
+    .flex-filter{
+        padding-left: 120px;
+    }
+    .title-product{
+        margin-left: 30px;
+    }
+}
+/* Show product */
+
+.bloc-show{
+    margin-top: 200px;
+    margin-bottom: 200px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.product-show-price{
+    font-weight: bold;
+}
+@media (max-width:750px){
+    .show-product{
+        margin-top: 25px;
+        text-align: center;
+    }
+    .show-subtitle{
+        margin-top: 25px;
+        text-align: center;
+    }
+    
+}
+

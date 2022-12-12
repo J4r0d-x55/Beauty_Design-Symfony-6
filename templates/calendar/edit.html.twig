@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un rendez-vous{% endblock %}
+
+{% block body %}
+    <h1 style="margin-top:100px;" class="text-center titre-rdv-new">Modifier un rendez-vous</h1>
+    <div id="calendrier" style="margin-top:50px;" class="container-sm shadow bloc-new-rdv mb-5">
+        {{ include('calendar/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+    
+    <div  style="margin: 10px auto;" class="d-grid gap-2 d-md-flex justify-content-center">
+        <a href="{{ path('app_calendar_index') }}"><button class="btn btn-light">Retour à la liste</button></a>
+   
+        {{ include('calendar/_delete_form.html.twig') }}
+    </div>
+    </div>
+{% endblock %}

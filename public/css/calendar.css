@@ -1,0 +1,70 @@
+/* Calendrier */
+
+#calendrier{
+    width: 85%;
+    margin: auto;    
+}
+.button-new-rdv{
+    display: flex;
+    justify-content: center;
+}
+.retour-list-rdv{
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+#button-rdv-list{
+    margin-top: 60px;
+}
+.bloc-new-rdv{
+    border: solid 1px rgb(194, 194, 194);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 50px;
+    margin-top:60px;
+    background: rgb(255,241,241);
+    background: radial-gradient(circle, rgba(255,241,241,1) 0%, rgba(255,219,219,0.8463760504201681) 100%);
+}
+.titre-rdv-new{
+    text-align: center;
+    margin-top: 110px;
+    margin-bottom: 50px;
+    font-family:'Dancing Script', cursive;
+    font-size: 65px;
+}
+
+@media (max-width:600px){
+    #bloc-list-rdv{
+        width: 90%;
+        margin: auto;
+    }
+    .table-thead{
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+    .table-tr-rdv{
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+    .title-list-rdv{
+        font-size: 12px;
+        overflow-wrap: break-word;
+    }
+    .champs-list-rdv{
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: center;
+    }
+    .flex-button-rdv{
+        display: flex;
+        justify-content: center;
+    }
+}

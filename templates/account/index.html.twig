@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte{% endblock %}
+
+{% block body %}
+<div class="bloc-compte-welcome">
+    <h1 class="title-compte mb-4">Mon Compte</h1>
+    <h4 class="welcome-compte">Bienvenue {{ app.user.firstname }} dans votre espace personnel, 
+    c'est ici que vous allez pouvoir gérer vos informations personnelles.</h4>
+
+
+<div class="container-sm mt-5 mb-5">
+    {% if is_granted('ROLE_ADMIN') %}
+        <a class="content-account form-control modifier-mot-de-passe" href="{{ path('admin') }}">Accèder à l'interface Administrateur</a><br/>
+        <a class="content-account form-control modifier-mot-de-passe" href="{{ path('app_main') }}">Planning</a><br/>
+        <a class="content-account form-control modifier-mot-de-passe" href="{{ path('app_calendar_new') }}">Ajouter un rendez-vous</a><br/>
+        <a class="content-account form-control modifier-mot-de-passe" href="{{ path('app_calendar_index') }}">Modifier un rendez-vous</a><br/>
+    {% endif %}
+        <a class="content-account form-control modifier-mot-de-passe" href="{{ path('app_account_password') }}">Modifier mon mot de passe</a><br/>
+        <a class="content-account form-control modifier-mot-de-passe" href="{{ path('app_account_address') }}">Gérer mes adresses</a><br/>
+</div>
+</div>
+{% endblock %}

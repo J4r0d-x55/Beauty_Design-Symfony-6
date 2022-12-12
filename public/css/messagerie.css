@@ -1,0 +1,82 @@
+/* Messagerie */
+
+.title-message{
+    text-align: center;
+    font-size: 65px;
+    font-family:'Dancing Script', cursive; 
+}
+.title-message-sent{
+    text-align: center;
+    font-size: 65px;
+    font-family:'Dancing Script', cursive; 
+    margin-top: 80px;
+}
+.title-message-received{
+    text-align: center;
+    font-size: 65px;
+    font-family:'Dancing Script', cursive; 
+    
+}
+
+.messagerie-bloc{
+    margin-top: 70px;
+    padding: 50px;
+    margin-bottom: 25px;
+}
+
+.sent-content{
+    padding: 50px;
+}
+
+.offcanvas{
+    margin-top: 80px;
+}
+
+.title-col{
+    
+    border-radius: 25px;
+    background-color:#fef1f1;
+}
+
+@media (max-width:800px){
+    .column{
+        font-size: 10px;
+        margin-left:3px;
+        
+    }
+    .column1{
+        font-size:9px;
+        margin-left: -9px;
+        overflow-wrap: break-word;
+    }
+    .title-message-sent{
+        font-size: 40px;
+        margin-top: 50px;
+    }
+    .title-col{
+        font-size: 13px;
+    }
+    .message-sent-p{
+        font-size: 13px;
+        text-align: center;
+    }
+    .flex-button-sent{
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+    .button-sent{
+        font-size: 10px;
+        margin: 10px;  
+    }
+    .title-message-received{
+        font-size: 40px;  
+    }
+    .title-message{
+        font-size:40px;
+    }
+    .message-accueil{
+        font-size: 15px;
+    }
+    
+}

@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<section class="body-home">
+    <div class="wall">
+
+    </div>
+<div class="container-flower">
+    <div class="flex-title">
+        <h1 class="title-home">Beauty Designer By Anais</h1>
+    </div>
+    <img src="images/fleur2.png" alt="fleur" class="img1">
+    <img src="images/fleur1.png" alt="fleur" class="img2">
+    <img src="images/fleurMilieu.png" alt="fleur" class="img3">
+    <img src="images/fleur2.png" alt="fleur" class="img4">
+    <img src="images/fleur1.png" alt="fleur" class="img5">
+</div>
+
+<article id="about">
+    <div class="about-wrapper container">
+      <div class="about-text">
+        <p class="desc-text-home">
+            Bienvenue chez Beauty Designer, implémenté depuis
+            plus de 4 ans sur Cagnes-sur-Mer, nous prenons soin de toutes les beautés
+            manucurie, soins cils et sourcils, n’hésitez
+            pas à nous contacter pour toutes informations ou prise de rendez-vous en ligne ou par téléphone.
+        </p>
+      </div>
+      <div class="about-img">
+        <img class="img-salon" src="images/article-desc.jpg" alt="salon" />
+      </div>
+    </div>
+</article>
+<article>
+    <div id="parallax" class="div-parallax"></div>
+</article>
+
+<main class="slider-home">
+    <div class="box slide"><span>Découvrir nos prestations<br><br><a href ="{{ path('app_prestation') }}"><button class="btn-slider">Découvrir</button></a></span></div>
+    
+    <div class="box slide"><span>Accéder à notre gallerie photos<br><br><a href="{{ path('app_gallerie') }}"><button class="btn-slider">Voir</button></a></span></div>
+    
+    <div class="box slide"><span>Prendre rendez-vous<br><br><a href="{{ path('app_rendez_vous') }}"><button class="btn-slider">Accéder</button></a></span></div>
+    
+    <div id="Dots"></div>
+</main>
+
+<h4 class="title-cart">Où nous trouver?</h4>
+<article id="about">
+  <div class="about-wrapper container">
+    <div class="about-text">
+      <iframe class="map-google" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.1556659626085!2d7.151777215723264!3d43.66573225963781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdd3beefd69cc7%3A0xa6d5b756d8f5ee36!2s6-8%20Av.%20de%20la%20Gaude%2C%2006800%20Cagnes-sur-Mer!5e0!3m2!1sfr!2sfr!4v1664371960272!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="about-img">
+      <img id="entree-salon" src="images/interieur.webp" alt"salon">
+    </div>
+  </div>
+</article>
+</section>
+{% endblock %}

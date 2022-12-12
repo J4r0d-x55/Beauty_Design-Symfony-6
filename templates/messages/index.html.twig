@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Messagerie{% endblock %}
+
+{% block body %}
+
+	<section class="container messagerie-bloc">
+		<div class="row">
+			<div class="col">
+				<h1 class="title-message text-center mb-5">Messagerie</h1>
+                    {% for message in app.flashes("message") %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{message}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+				<p class="message-accueil form-control">Messages reçus : {{ app.user.received|length }}</p>
+				<p class="message-accueil form-control">Messages envoyés : {{ app.user.sent|length }}</p>
+				<hr>
+				<div class="flex-button-sent">
+					<a class="button-sent btn btn-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+						Voir mes dossiers
+					</a>
+					<a class="button-sent btn btn-light" href="{{ path("app_send") }}">Envoyer un message</a>
+				</div>
+ 				<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+					<div class="offcanvas-header">
+						<h2 class="offcanvas-title" id="offcanvasExampleLabel">Mes dossiers</h2>
+						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					</div>
+					<div class="offcanvas-body">
+						<div class="list-group">
+                            <a class="list-group-item 
+                            list-group-item-action active" style="background-color:#fef1f1; color:#333; border: 1px solid grey;" href="{{ path("app_messages") }}">Accueil</a>
+                        </div>
+						<div class="list-group">
+                            <a class="list-group-item 
+                            list-group-item-action" href="{{ path("app_received") }}">Boîte de réception</a>
+                        </div>
+						<div class="list-group">
+                            <a class="list-group-item 
+                            list-group-item-action" href="{{ path("app_sent") }}">Messages envoyés</a>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

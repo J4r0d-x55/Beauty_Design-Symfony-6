@@ -1,0 +1,103 @@
+/* Panier */
+
+.flex-panier{
+    display: flex;
+    justify-content: center;
+}
+.table-hover{
+    margin-bottom: 240px;
+    margin-top: 200px;
+    width: 70%; 
+}
+.img-panier{
+    height: 35%;
+    width: 45%;
+}
+.nom-produit-panier{
+    font-weight: bold;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.quantité-produit-panier{
+    font-size: 0.9rem;
+}
+.subtitle_produit-panier{
+    font-weight: lighter;
+    font-style: italic;
+}
+.prix-produit-panier{
+    font-size: 0.9rem;
+}
+.total-produit-panier{
+    font-size: 0.9rem;
+}
+
+.ajout-panier{
+    border: solid 1px #F8F8FF;
+    font-size: 12px;
+}
+.supprimer-panier{
+    border: solid 1px #F8F8FF;
+    font-size: 12px;
+}
+.retirer-panier{
+    border: solid 1px #F8F8FF;
+    font-size: 12px;
+}
+.tout-supprimer-panier{
+    border: solid 1px #F8F8FF;
+    font-size: 12px;
+}
+
+.ajout-panier:hover{
+    scale: 1.2;
+    transition: 0.3s ease;
+}
+.supprimer-panier:hover{
+    scale: 1.2;
+    transition: 0.3s ease;
+}
+.retirer-panier:hover{
+    scale: 1.2;
+    transition: 0.3s ease;
+}
+.tout-supprimer-panier:hover{
+    scale: 1.2;
+    transition: 0.3s ease;
+}
+.final-somme-panier{
+    font-weight: bold;
+}
+.bloc-total-panier{
+    margin-top: 25px;
+}
+
+@media (max-width:850px){
+    td, th{
+        padding: 5px;
+    }
+    
+    .nom-produit-panier{
+        font-size: 13px;
+    }
+    .prix-produit-panier{
+        font-size: 13px;
+    }
+    .quantité-produit-panier{
+        font-size: 13px;
+    }
+    .total-produit-panier{
+        font-size: 13px;
+    }
+    .panier-table{
+        padding-right: 10px;  
+        padding-left: 10px; 
+        
+    }
+    .img-panier{
+        min-width:100px;
+        min-height: 90px;
+    }
+    
+}

@@ -1,0 +1,42 @@
+/* Connexion */
+
+body{
+    background-image: repeating-radial-gradient(circle at center center, transparent 0px, transparent 2px,rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 3px,transparent 3px, transparent 5px,rgba(0,0,0,0.03) 5px, rgba(0,0,0,0.03) 7px),repeating-radial-gradient(circle at center center, rgb(255,255,255) 0px, rgb(255,255,255) 9px,rgb(255,255,255) 9px, rgb(255,255,255) 21px,rgb(255,255,255) 21px, rgb(255,255,255) 31px,rgb(255,255,255) 31px, rgb(255,255,255) 40px); background-size: 20px 20px;
+}
+.form-login{
+    width: 50%;
+    padding-top: 40px;
+    padding-right: 60px;
+    padding-left: 15px;     
+}
+.wrapper-inscription-login{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.h3{
+    color: #ff9a9c;
+}
+.compte-register{
+    text-decoration: none;
+    color: #333;
+    margin-left: 10px;
+}
+.compte-register:hover{
+    color:#ff9a9c;
+    transition: 0.3 ease;
+
+}
+
+@media (max-width: 767px){
+    .form-login{
+        width: 100%;
+        margin-left: 20px;
+    }
+    .h3{
+        text-align: center;
+    }
+    .compte-register{
+        font-size: 10px;
+    }
+}

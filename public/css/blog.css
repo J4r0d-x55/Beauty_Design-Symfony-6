@@ -1,0 +1,63 @@
+/* Blog */
+
+.title-blog{
+    text-align: center;
+    margin-top: 110px;
+    margin-bottom: 50px;
+    font-family:'Dancing Script', cursive;
+    font-size: 65px;
+}
+.article-item{
+    display: flex;
+    font-size: 15px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+.title-article{
+    font-size: 1.5vw;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.article-preview{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    display: block;
+    
+}
+.bloc-show-article{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+.text-para-show-article{
+    float: left;  
+}
+.img-show-article{
+    margin: 15px;
+}
+
+@media(max-width: 1430px){
+
+    .article-preview{
+        display: none;
+    }
+
+}
+@media(max-width: 1000px){
+    .button-article-blog{
+        margin-top: 2vh;
+    }
+    .title-article{
+        font-size: 4vw;
+    }
+    .bloc-show-article{
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+/* Commentaire */

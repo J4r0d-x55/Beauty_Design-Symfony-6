@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un rendez-vous{% endblock %}
+
+{% block body %}
+    <h1 class="titre-rdv-new">Créer un nouveau rendez-vous</h1>
+    <div id="calendrier" class="container-sm bloc-new-rdv shadow mb-5">
+
+
+    {{ include('calendar/_form.html.twig') }}
+    
+        <div style="margin: 10px auto;" class="retour-list-rdv">
+            <a class="btn btn-light" href="{{ path('app_calendar_index') }}">Retour à la liste des rendez-vous</a>
+        </div>
+    </div>
+{% endblock %}

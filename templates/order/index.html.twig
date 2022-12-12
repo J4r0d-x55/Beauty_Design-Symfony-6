@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande{% endblock %}
+
+{% block body %}
+
+<h1 class="command-title">Mes Commandes</h1>
+<hr>
+<div class="flex-commande">
+  <div class="flex-item-commande">
+    {% set formHtml %}
+        {{ form_start(form) }}
+        {{ form_end(form) }}
+    {% endset %}
+    {{ formHtml|replace({'[br]' : '</br>'})|raw }}
+    </br>
+  </div>
+</div>
+
+
+{% endblock %}

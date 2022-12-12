@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+<h1 class="title-blog">Blog</h1>
+
+<div class="row">
+    {% for article in articles %}
+        <div class="col-md-6">
+            <div class="article-item">
+                <img src="images/{{ article.illustration }}" alt="{{ article.title }}" class="img-fluid img-blog">
+                <div class="content-blog">
+                    <h5 class="title-article">{{ article.title }}</h5>
+                    <span class="article-preview">{{ article.preview }}</span>
+                    <a href="{{ path('article', { 'slug' : article.slug }) }}" class="btn btn-light d-grid gap-2 button-article-blog">Lire l'article</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

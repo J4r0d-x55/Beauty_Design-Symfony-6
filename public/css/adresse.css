@@ -1,0 +1,108 @@
+/* Mes Adresses */
+
+.title-adresse{
+    text-align: center;
+    font-size: 65px;
+    font-family:'Dancing Script', cursive;
+    margin-top: 100px;
+}
+.retour-adresse{
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    
+}
+.retour-adresse:hover{
+    color: #ff9a9c;
+    text-decoration: underline;
+    transition: 0.5s ease;
+}
+.ajout-adresse{
+    
+    margin-top: 25px;
+}
+
+/* Ajouter Adresse */
+
+.flex-address-form{
+    display: flex;
+    justify-content: center;
+}
+.ajouter-adresse-form{
+    margin-left: 650px;
+    margin-right: 650px;
+    padding: 11px;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-bottom: 50px;
+    background-image:url(../images/télé.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: solid 1px rgb(216, 216, 216);
+    border-radius: 25px;
+    min-width: 500px;
+}
+.titre-ajouter-adresse{
+    margin-top: 100px;
+    text-align: center;
+    font-size: 65px;
+    font-family:'Dancing Script', cursive;
+}
+.ajouter-adresse-form{
+    margin-top: 45px;
+}
+.flex-retour-adress{
+    display: flex;
+    justify-content:space-between;
+    margin-left: 5%;
+}
+.retour-ajouter-adresse{
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    width: 18rem;
+    text-align: center;
+}
+.retour-ajouter-adresse:hover{
+    color: #ff9a9c;
+    text-decoration: underline;
+    transition: 0.3s ease;
+}
+.no-address{
+    margin-bottom: 100px;
+}
+.no-address2{
+    text-decoration: none ;
+    color:  #ff9a9c;
+}
+.no-address2:hover{
+    color: crimson;
+}
+
+@media (max-width:850px){
+    .ajouter-adresse-form{
+        min-width: 350px;
+    }
+}
+
+.flex-card-address{
+    display: flex;
+    justify-content: center; 
+    align-content: space-around;  
+    margin: 35px;
+}
+.card-address{
+    width: 18rem;
+    margin: 20px;
+}
+
+@media (max-width: 980px){
+    .flex-card-address{
+        flex-direction: column;
+    }
+    .flex-retour-adress{
+        display: flex;
+        justify-content:center;
+        margin-left: 0%;
+    }
+}

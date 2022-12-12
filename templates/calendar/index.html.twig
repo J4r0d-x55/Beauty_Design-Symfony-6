@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des rendez-vous{% endblock %}
+
+{% block body %}
+    <h1 style="margin-top:130px;" class="titre-rdv-new text-center">Liste des rendez-vous</h1>
+
+<div style="overflow-x:auto;">
+    <table id="bloc-list-rdv" class="table container-sm">
+        <thead class="table-thead">
+            <tr class="table-tr-rdv">
+                <th class="title-list-rdv">Id</th>
+                <th class="title-list-rdv">Titre</th>
+                <th class="title-list-rdv">Début</th>
+                <th class="title-list-rdv">Fin</th>
+                <th class="title-list-rdv">Description</th>
+                <th class="title-list-rdv">Couleur fond</th>
+                <th class="title-list-rdv">Couleur bordure</th>
+                <th class="title-list-rdv">Couleur texte</th>
+                <th class="title-list-rdv">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for calendar in calendars %}
+            <tr class="table-tr-rdv">
+                <td class="champs-list-rdv">{{ calendar.id }}</td>
+                <td class="champs-list-rdv">{{ calendar.title }}</td>
+                <td class="champs-list-rdv">{{ calendar.start ? calendar.start|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="champs-list-rdv">{{ calendar.end ? calendar.end|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="champs-list-rdv">{{ calendar.description }}</td>
+                <td class="champs-list-rdv">{{ calendar.backgroundColor }}</td>
+                <td class="champs-list-rdv">{{ calendar.borderColor }}</td>
+                <td class="champs-list-rdv">{{ calendar.textColor }}</td>
+                <td class="flex-button-rdv">
+                    <a href="{{ path('app_calendar_show', {'id': calendar.id}) }}"><button class="btn btn-light">Voir</button></a>
+                    <a href="{{ path('app_calendar_edit', {'id': calendar.id}) }}"><button class="btn btn-light">Modifier</button></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr class="table-tr-rdv">
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="d-grid d-md-flex justify-content-center">
+        <a href="{{ path('app_calendar_new') }}"><button style="margin: 50px auto;" class="btn btn-light">Créer un nouveau rendez-vous</button></a>
+    </div>
+</div>
+{% endblock %}
